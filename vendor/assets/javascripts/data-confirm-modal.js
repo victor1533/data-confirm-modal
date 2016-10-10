@@ -134,8 +134,8 @@
 	       '<p></p>' + 
             '</div>' +
             '<div class="modal-footer">' +
-              '<button class="modal-action modal-close waves-effect waves-light btn red cancel" style="margin-right\: 10px;"></button>' +
-              '<button class="modal-action modal-close waves-effect waves-light btn green commit style="margin-right\: 10px;"></button>' +
+              '<button class="modal-action modal-close waves-effect waves-light btn red cancel"></button>' +
+              '<button class="modal-action modal-close waves-effect waves-light btn green commit></button>' +
             '</div>'+
           '</div>'+
 
