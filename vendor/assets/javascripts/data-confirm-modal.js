@@ -220,13 +220,6 @@
 
     $('body').append(modal);
 
-    modal.spawn = function() {
-      return modal.modal({
-        backdrop: options.backdrop,
-        keyboard: options.keyboard,
-        show:     options.show
-      });
-    };
 
     return modal;
   };
