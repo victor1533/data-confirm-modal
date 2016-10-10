@@ -116,7 +116,7 @@
       // Call the original event handler chain
       element.get(0).click();
 
-      modal.modal('hide');
+      modal.closeModal();
     });
 
     return modal;
@@ -134,8 +134,8 @@
 	       '<p></p>' + 
             '</div>' +
             '<div class="modal-footer">' +
-              '<button class="waves-effect waves-light btn btn-flat red cancel "></button>' +
-              '<button class="waves-effect waves-light btn green btn-flat commit "></button>' +
+              '<button class="modal-action modal-close waves-effect waves-light btn red cancel" style="margin-right: 10px;"></button>' +
+              '<button class="modal-action modal-close waves-effect waves-light btn green commit style="margin-right: 10px;"></button>' +
             '</div>'+
           '</div>'+
 
