@@ -66,7 +66,7 @@
       //
       var modal = buildModal(options);
 
-
+      modal.spawn();
       modal.on('hidden.bs.modal', function () {
         modal.remove();
       });
@@ -220,6 +220,9 @@
 
     $('body').append(modal);
 
+    modal.spawn = function() {
+      return modal.openModal();
+    };
 
     return modal;
   };
@@ -243,6 +246,7 @@
   $.fn.confirmModal = function () {
     var modal = getModal($(this));
 
+    modal.spawn();
 
     return modal;
   };
@@ -267,7 +271,7 @@
       var element = $(this), modal = getModal(element);
 
       if (!modal.is(':visible')) {
-
+        modal.spawn();
 
         // Cancel Rails' confirmation
         return false;
