@@ -123,25 +123,22 @@
   }
 
   var buildModal = function (options) {
-    var id = 'confirm-modal-' + String(Math.random()).slice(2, -1);
+    var id = 'modal' + String(Math.random()).slice(2, -1);
     var fade = settings.fade ? 'fade' : '';
     var modalClass = options.modalClass ? options.modalClass : settings.modalClass;
 
     var modal = $(
-      '<div id="'+id+'" class="modal '+modalClass+' '+fade+'" tabindex="-1" role="dialog" aria-labelledby="'+id+'Label" aria-hidden="true">' +
-        '<div class="modal-dialog">' +
+      '<div id="'+id+'" class="modal" role="dialog">' +
           '<div class="modal-content">' +
-            '<div class="modal-header">' +
-              '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
               '<h4 id="'+id+'Label" class="modal-title"></h4> ' +
+	       '<p></p>' + 
             '</div>' +
-            '<div class="modal-body"></div>' +
             '<div class="modal-footer">' +
-              '<button class="btn cancel" data-dismiss="modal" aria-hidden="true"></button>' +
-              '<button class="btn commit"></button>' +
+              '<button class="waves-effect waves-light btn red cancel"></button>' +
+              '<button class="waves-effect waves-light btn green commit"></button>' +
             '</div>'+
           '</div>'+
-        '</div>'+
+
       '</div>'
     );
 
@@ -157,7 +154,7 @@
 
     modal.find('.modal-title').text(options.title || settings.title);
 
-    var body = modal.find('.modal-body');
+    var body = modal.find('.modal-content p');
 
     $.each((options.text||'').split(/\n{2}/), function (i, piece) {
       body.append($('<p/>').html(piece));
