@@ -38,9 +38,9 @@
   var defaults = {
     title: 'Are you sure?',
     commit: 'Confirm',
-    commitClass: 'btn-danger',
+    commitClass: 'green',
     cancel: 'Cancel',
-    cancelClass: 'btn-default',
+    cancelClass: 'red',
     fade: true,
     verifyClass: 'form-control',
     elements: ['a[data-confirm]', 'button[data-confirm]', 'input[type=submit][data-confirm]'],
@@ -75,14 +75,14 @@
         if (options.onConfirm && options.onConfirm.call)
           options.onConfirm.call();
 
-        modal.modal('hide');
+        modal.closeModal();
       });
 
       modal.find('.cancel').on('click', function () {
         if (options.onCancel && options.onCancel.call)
           options.onCancel.call();
 
-        modal.modal('hide');
+        modal.closeModal();
       });
     }
   };
@@ -134,8 +134,8 @@
 	       '<p></p>' + 
             '</div>' +
             '<div class="modal-footer">' +
-              '<button class="waves-effect waves-light btn red cancel"></button>' +
-              '<button class="waves-effect waves-light btn green commit"></button>' +
+              '<button class="waves-effect waves-light btn btn-flat red cancel "></button>' +
+              '<button class="waves-effect waves-light btn green btn-flat commit "></button>' +
             '</div>'+
           '</div>'+
 
